@@ -1,0 +1,47 @@
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.clr{
+    clear:both;
+}
+
+.content{
+    height: 80%;
+    overflow: hidden;
+}
+
+.tweets{
+    width: 400px;
+    margin: 30px auto;
+    height: 100%;
+    overflow: scroll;
+    border:solid 1px #e2e2e2;
+}
+
+.tweet{
+    position: relative;
+    padding: 10px 15px;
+    width: 95%;
+    border-bottom: solid 1px #eee;
+}
+
+.tweet:hover{
+    background: #eee;
+    cursor: pointer;
+}
+
+.tweet .logo{
+    float:left;
+    margin-right:6px;
+}
+
+.tweet .text{
+    padding: 5px;
+    text-align:justify;
+}
+
+.tweet .media img{
+    width: 97%;
+}
