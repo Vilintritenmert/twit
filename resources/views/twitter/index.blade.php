@@ -10,45 +10,24 @@
 </head>
 <body>
 <div class="content">
-    <div class="tweets">
-        @foreach($tweets as $tweet)
-            <div class="tweet">
-                <div class="header">
-                    <div class="logo"><img src="{{$tweet->logo}}"></div>
-                    <div class="name">{{$tweet->name}}</div>
-                    <div class="created_at">{{$tweet->time}}</div>
-                    <div class="login">{{'@'.$tweet->screen_name}}</div>
-                </div>
-                <div class="clr"></div>
-                <div class="text">
-                    {!! $tweet->text !!}
-                </div>
-                <div class="media">
-                    {!! $tweet->Image !!}
-                </div>
-            </div>
-        @endforeach
+    <div class="tweets" data-url="{{route('ajax.list')}}">
     </div>
 </div>
 <script src="/js/jquery-3.1.1.min.js"></script>
-<script src="/js/twit.js"></script>
 <script>
+    var showed = [];
     var listOfTweets = [
             @foreach($tweets as $tweet)
         {
-            id:{{$tweet->id}},
-            logo:'{{$tweet->logo}}',
-            name:'{{$tweet->name}}',
-            created_at:'{{$tweet->time}}',
-            login:'{{$tweet->login }}',
-            text:'{!! $tweet->text !!}',
-            image:'{!! $tweet->image !!}'
+            id: {{$tweet->id}},
+            view: '{!! $tweet->view !!}'
         }
-            @if($tweet != end($tweets))
-            ,
-            @endif
+        @if($tweet != end($tweets))
+        ,
+        @endif
         @endforeach
     ];
 </script>
+<script src="/js/twit.js"></script>
 </body>
 </html>

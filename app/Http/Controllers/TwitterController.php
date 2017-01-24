@@ -13,8 +13,7 @@ class TwitterController extends Controller
      */
     public function index()
     {
-        $tweets = Twitter::getUserTimeline(['screen_name' => 'ukrpravda_news', 'count' => 20, 'format' => 'array']);
-        $tweetsCollections = Tweet::createFromTweeter($tweets);
+        $tweetsCollections = Tweet::getTweets();
 
         return \View::make('twitter.index', ['tweets'=>$tweetsCollections]);
     }
@@ -22,8 +21,11 @@ class TwitterController extends Controller
     /**
      * List Of tweets
      */
-    public function listAjax()
+    public function tweetList()
     {
+        $tweets = Tweet::getTweets();
+
+        return response()->json($tweets);
 
     }
 }

@@ -11,5 +11,6 @@
 |
 */
 Route::get('/', 'TwitterController@index');
+Route::get('list', 'TwitterController@tweetList')->name('ajax.list');
 
 

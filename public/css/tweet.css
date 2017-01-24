@@ -37,11 +37,19 @@ html, body{
     margin-right:6px;
 }
 
+.tweet .header{
+    padding-top:5px;
+}
+
 .tweet .text{
-    padding: 5px;
+    padding: 10px 3px;
     text-align:justify;
 }
 
 .tweet .media img{
     width: 97%;
+}
+
+.new{
+    background-color:#FDB632;
 }
